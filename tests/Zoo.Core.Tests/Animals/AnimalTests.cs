@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xunit;
+using Zoo.Core.Employees;
 using Zoo.Core.Foods;
 using Zoo.Core.Medicines;
 
@@ -27,8 +28,9 @@ namespace Zoo.Core.Animals.Tests
         public void ShouldGetHealedWhenSick()
         {
             var penguin = new Penguin();
+            var zooKeeper = new ZooKeeper("L", "F");
 
-            penguin.Feed(new Grass());
+            penguin.Feed(new Grass(), zooKeeper);
             Assert.True(penguin.IsSick);
 
             penguin.Heal(new AntiInflammatory());

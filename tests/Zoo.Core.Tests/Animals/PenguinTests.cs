@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using Zoo.Core.Employees;
 using Zoo.Core.Foods;
 
 namespace Zoo.Core.Animals.Tests
@@ -16,10 +17,11 @@ namespace Zoo.Core.Animals.Tests
         public void ShouldEatMeatOnly()
         {
             var penguin = new Penguin();
-            penguin.Feed(new Meat());
+            var zooKeeper = new ZooKeeper("L", "F");
+            penguin.Feed(new Meat(), zooKeeper);
             Assert.False(penguin.IsSick);
 
-            penguin.Feed(new Vegetable());
+            penguin.Feed(new Vegetable(), zooKeeper);
             Assert.True(penguin.IsSick);
         }
 
