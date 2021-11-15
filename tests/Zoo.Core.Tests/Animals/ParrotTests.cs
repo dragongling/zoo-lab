@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using Zoo.Core.Employees;
 using Zoo.Core.Foods;
 
 namespace Zoo.Core.Animals.Tests
@@ -16,10 +17,11 @@ namespace Zoo.Core.Animals.Tests
         public void ShouldEatVegetablesOnly()
         {
             var parrot = new Parrot();
-            parrot.Feed(new Vegetable());
+            var zooKeeper = new ZooKeeper("L", "F");
+            parrot.Feed(new Vegetable(), zooKeeper);
             Assert.False(parrot.IsSick);
 
-            parrot.Feed(new Grass());
+            parrot.Feed(new Grass(), zooKeeper);
             Assert.True(parrot.IsSick);
         }
 

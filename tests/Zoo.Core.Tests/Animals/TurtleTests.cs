@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using Zoo.Core.Employees;
 using Zoo.Core.Foods;
 
 namespace Zoo.Core.Animals.Tests
@@ -16,9 +17,10 @@ namespace Zoo.Core.Animals.Tests
         public void ShouldEatEverything()
         {
             var turtle = new Turtle();
-            turtle.Feed(new Meat());
-            turtle.Feed(new Vegetable());
-            turtle.Feed(new Grass());
+            var zooKeeper = new ZooKeeper("L", "F");
+            turtle.Feed(new Meat(), zooKeeper);
+            turtle.Feed(new Vegetable(), zooKeeper);
+            turtle.Feed(new Grass(), zooKeeper);
             Assert.False(turtle.IsSick);
         }
 

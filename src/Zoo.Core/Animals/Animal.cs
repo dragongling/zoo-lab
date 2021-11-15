@@ -28,9 +28,9 @@ namespace Zoo.Core.Animals
 
         public abstract bool IsFriendlyWith(Animal otherAnimal);
 
-        public void Feed(Food food)
+        public void Feed(Food food, Employees.ZooKeeper zooKeeper)
         {
-            FeedTimes.Add(new FeedTime(DateTime.Now));
+            FeedTimes.Add(new FeedTime(DateTime.Now, zooKeeper));
             if (!FavouriteFood.Contains(food.GetType().Name))
             {
                 IsSick = true;
