@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Zoo.Core.Medicine.Tests
+namespace Zoo.Core.Medicines.Tests
 {
     public class AntiDepressionTests
     {

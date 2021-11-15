@@ -1,4 +1,4 @@
-﻿namespace Zoo.Core.Medicine
+﻿namespace Zoo.Core.Medicines
 {
     public abstract class Medicine
     {
