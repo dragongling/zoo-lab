@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\src\Zoo.Core\Zoo.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Employees\" />
+  </ItemGroup>
+
 </Project>
