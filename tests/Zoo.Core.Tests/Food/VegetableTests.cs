@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Zoo.Core.Food.Tests
+namespace Zoo.Core.Foods.Tests
 {
     public class VegetableTests
     {
