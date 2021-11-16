@@ -1,6 +1,8 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
 using Zoo.Core.Animals;
 using Zoo.Core.Employees;
+using Zoo.Core.Foods;
 
 namespace Zoo.Core.Tests
 {
@@ -55,6 +57,16 @@ namespace Zoo.Core.Tests
         {
             var zoo = new Zoo("49°54′10″N 57°20′0″E");
             zoo.FeedAnimals();
+            zoo.AddEnclosure(new Enclosure("Penguins", zoo, 10000));
+
+            var penguin = new Penguin();
+            var zooKeeper = new ZooKeeper("L", "F");
+            zooKeeper.AddAnimalExperience(penguin);
+            zoo.HireEmployee(zooKeeper);
+
+            zoo.FindAvailableEnclosure(penguin);
+            zoo.FeedAnimals();
+            Assert.Equal(zooKeeper, penguin.FeedTimes.Last().FedByZooKeeper);
         }
 
         [Fact]
@@ -62,6 +74,18 @@ namespace Zoo.Core.Tests
         {
             var zoo = new Zoo("49°54′10″N 57°20′0″E");
             zoo.HealAnimals();
+            zoo.AddEnclosure(new Enclosure("Penguins", zoo, 10000));
+
+            var penguin = new Penguin();
+            var vet = new Veterinarian("L", "F");
+            vet.AddAnimalExperience(penguin);
+            zoo.HireEmployee(vet);
+            
+            zoo.FindAvailableEnclosure(penguin);
+            penguin.Feed(new Grass(), new ZooKeeper("L", "F"));
+            Assert.Contains(zoo.Animals, animal => animal.IsSick);
+            zoo.HealAnimals();
+            Assert.DoesNotContain(zoo.Animals, animal => animal.IsSick);
         }
     }
 }
