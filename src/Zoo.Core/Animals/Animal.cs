@@ -9,11 +9,7 @@ namespace Zoo.Core.Animals
 {
     public abstract class Animal
     {
-        public int ID { 
-            get {
-                return GetHashCode();
-            } 
-        }
+        public int ID { get; }
 
         public abstract int RequiredSpaceSqFt { get; }
         public abstract string[] FavouriteFood { get; }
@@ -24,6 +20,7 @@ namespace Zoo.Core.Animals
         public Animal()
         {
             FeedTimes = new List<FeedTime>();
+            ID = new Random().Next(int.MinValue, int.MaxValue);
         }
 
         public abstract bool IsFriendlyWith(Animal otherAnimal);
