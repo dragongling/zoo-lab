@@ -33,6 +33,7 @@ namespace Zoo.Core
 
         public void AddEnclosure(Enclosure enclosure)
         {
+            Console.WriteLine($"Added enclosure {enclosure.Name} to zoo in {Location}");
             Enclosures.Add(enclosure);
         }
 
@@ -42,7 +43,6 @@ namespace Zoo.Core
             {
                 try
                 {
-                    Console.WriteLine(enclosure.Name);
                     enclosure.AddAnimal(animal);
                     return;
                 }
@@ -62,6 +62,7 @@ namespace Zoo.Core
 
         public void FeedAnimals()
         {
+            Console.WriteLine($"Starting to feed animals at zoo in {Location}");
             ZooKeeper zooKeeper = Employees.OfType<ZooKeeper>().FirstOrDefault();
             if (zooKeeper == null)
             {
@@ -73,10 +74,12 @@ namespace Zoo.Core
                 object favouriteFood = Activator.CreateInstance(Type.GetType("Zoo.Core.Foods." + animal.FavouriteFood[0]));
                 zooKeeper.FeedAnimal(animal, (Food)favouriteFood);                
             }
+            Console.WriteLine("Feeding done");
         }
 
         public void HealAnimals()
         {
+            Console.WriteLine($"Starting to heal animals at zoo in {Location}");
             Veterinarian vet = Employees.OfType<Veterinarian>().FirstOrDefault();
             if (vet == null)
             {
@@ -87,6 +90,7 @@ namespace Zoo.Core
             {
                 vet.HealAnimal(animal, new AntiInflammatory());
             }
+            Console.WriteLine("Healing done");
         }
     }
 }

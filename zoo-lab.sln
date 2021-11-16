@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo.Core", "src\Zoo.Core\Zoo.Core.csproj", "{6E131DEF-5452-4126-B973-2F248413CA9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoo.Core", "src\Zoo.Core\Zoo.Core.csproj", "{6E131DEF-5452-4126-B973-2F248413CA9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo.Core.Tests", "tests\Zoo.Core.Tests\Zoo.Core.Tests.csproj", "{72C4FE57-473E-47A4-9E8E-34AEC6DAA5DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zoo.Core.Tests", "tests\Zoo.Core.Tests\Zoo.Core.Tests.csproj", "{72C4FE57-473E-47A4-9E8E-34AEC6DAA5DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo.App", "Zoo.App\Zoo.App.csproj", "{3A0CE986-70A3-407A-A084-79CAC941CE05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zoo.App.Tests", "Zoo.App.Tests\Zoo.App.Tests.csproj", "{6C76B19E-32B3-46FF-92F6-64DB505B69CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{72C4FE57-473E-47A4-9E8E-34AEC6DAA5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C4FE57-473E-47A4-9E8E-34AEC6DAA5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C4FE57-473E-47A4-9E8E-34AEC6DAA5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0CE986-70A3-407A-A084-79CAC941CE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0CE986-70A3-407A-A084-79CAC941CE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0CE986-70A3-407A-A084-79CAC941CE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0CE986-70A3-407A-A084-79CAC941CE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C76B19E-32B3-46FF-92F6-64DB505B69CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C76B19E-32B3-46FF-92F6-64DB505B69CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C76B19E-32B3-46FF-92F6-64DB505B69CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C76B19E-32B3-46FF-92F6-64DB505B69CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

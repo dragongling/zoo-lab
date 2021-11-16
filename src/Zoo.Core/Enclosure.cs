@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Zoo.Core.Animals;
 
@@ -28,6 +29,7 @@ namespace Zoo.Core
             }
             if (Animals.Sum(a => a.RequiredSpaceSqFt) + animal.RequiredSpaceSqFt > SquareFeet)
                 throw new NoAvailableSpaceException();
+            Console.WriteLine($"Added {animal.GetType().Name} {animal.ID} to Enclose {Name}");
             Animals.Add(animal);
         }
     }

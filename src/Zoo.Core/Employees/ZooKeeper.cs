@@ -35,5 +35,10 @@ namespace Zoo.Core.Employees
             animal.Feed(food, this);
             return true;
         }
+
+        public override string ToString()
+        {
+            return $"zoo keeper {LastName} {FirstName}";
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Zoo.Core.Animals;
+﻿using System;
+using Zoo.Core.Animals;
 using Zoo.Core.Medicines;
 
 namespace Zoo.Core.Employees
@@ -37,6 +38,7 @@ namespace Zoo.Core.Employees
             {
                 return false;
             }
+            Console.WriteLine($"{animal} was healed by {this} with {medicine}");
             animal.Heal(medicine);
             return true;
         }

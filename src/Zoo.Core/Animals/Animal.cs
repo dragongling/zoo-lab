@@ -20,7 +20,7 @@ namespace Zoo.Core.Animals
         public Animal()
         {
             FeedTimes = new List<FeedTime>();
-            ID = new Random().Next(int.MinValue, int.MaxValue);
+            ID = new Random().Next();
         }
 
         public abstract bool IsFriendlyWith(Animal otherAnimal);
@@ -28,6 +28,7 @@ namespace Zoo.Core.Animals
         public void Feed(Food food, Employees.ZooKeeper zooKeeper)
         {
             FeedTimes.Add(new FeedTime(DateTime.Now, zooKeeper));
+            Console.WriteLine($"{DateTime.Now}: {this} was fed by {zooKeeper}");
             if (!FavouriteFood.Contains(food.GetType().Name))
             {
                 IsSick = true;
@@ -47,6 +48,11 @@ namespace Zoo.Core.Animals
         public void Heal(Medicine medicine)
         {
             IsSick = false;
+        }
+
+        public override string ToString()
+        {
+            return $"{GetType().Name} {ID}";
         }
     }
 }
