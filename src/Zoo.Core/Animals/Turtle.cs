@@ -11,7 +11,7 @@ namespace Zoo.Core.Animals
 
         private static readonly string[] FriendlyAnimals = new string[]
         {
-            "Turtle"
+            "Turtle", "Parrot", "Bison", "Elephant"
         };
 
         public override bool IsFriendlyWith(Animal otherAnimal)
